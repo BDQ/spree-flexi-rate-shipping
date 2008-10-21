@@ -1,0 +1,30 @@
+<h1><%=t("Flexi Shipping Rates") %></h1>
+<table class="admin-report" width="545">
+  <thead>
+    <tr>
+	    <th><%=t("Shipping Category")%></th>
+      <th><%=t("First Item Price")%></th>
+      <th><%=t("Additional Item Price")%></th>
+      <th><%=t("Max. Number of Items")%></th>
+			<th><%=t("Action")%></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @flexi_shipping_rates.each do |flexi_shipping_rate| %>
+      <tr class="<%= cycle('even', 'odd') %>">
+        <td><%=flexi_shipping_rate.shipping_category.name %></td>
+        <td><%=number_to_currency(flexi_shipping_rate.first_item_price) %></td>
+        <td><%=number_to_currency(flexi_shipping_rate.additional_item_price) %></td>
+        <td><%=flexi_shipping_rate.max_items %></td>
+        <td>
+          <%=link_to t("Edit"), edit_object_url(flexi_shipping_rate) %> |
+          <%=link_to t("Delete"), object_url(flexi_shipping_rate), :method => :delete %>
+        </td>
+      </tr>
+    <% end %>
+    <% if @flexi_shipping_rates.empty? %>
+      <tr><td colspan="5">None.</td></tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to t("New Flexi Shipping Rate"), new_object_url %>

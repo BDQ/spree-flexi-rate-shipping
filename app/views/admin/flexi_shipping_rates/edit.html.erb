@@ -1,0 +1,8 @@
+<h1><%= t("Editing Flexi Shipping Rate") %></h1>
+<%= error_messages_for :flexi_shipping_rate %>
+<% form_for(:flexi_shipping_rate, :url => object_url, :html => { :method => :put }) do |f| %>
+  <%= render :partial => "form", :locals => { :f => f } %>
+  <p>
+    <%=submit_tag t("Update")%>
+  </p>
+<% end %>

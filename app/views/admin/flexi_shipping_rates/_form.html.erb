@@ -1,0 +1,20 @@
+<table>
+  <tr>
+    <td><%=t("Shipping Category")%>:</td>
+    <td><%= collection_select(:flexi_shipping_rate, 
+                              :shipping_category_id, @available_categories, :id, :name, 
+                              {}, {"style" => "width:200px"}) %></td>
+  </tr>
+	<tr>
+    <td><%=t("First Item Price")%>:</td>
+    <td><%= f.text_field :first_item_price, {"style" => "width:60px"} %></td>
+  </tr>
+	<tr>
+    <td><%=t("Additional Item Price")%>:</td>
+    <td><%= f.text_field :additional_item_price, {"style" => "width:60px"} %></td>
+  </tr>
+	<tr>
+    <td><%=t("Max. number of items")%>:</td>
+    <td><%= f.text_field :max_items, {"style" => "width:30px"} %></td>
+  </tr>
+</table>
