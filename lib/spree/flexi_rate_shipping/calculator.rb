@@ -9,7 +9,10 @@ module Spree
           li.quantity.times do 
             sc = li.variant.product.shipping_category
             sc ||= ShippingCategory.new()
-            fsr = sc.flexi_shipping_rate
+            flexi_rates = sc.flexi_shipping_rates
+            
+            fsr = flexi_rates.detect{ | rate | rate.zone.include?(order.address) }
+            
             fsr ||= FlexiShippingRate.new(:id => 'default', :first_item_price => 0, :max_items => 1)
             rate_count.has_key?(fsr.id) ? rate_count[fsr.id] += 1 : rate_count[fsr.id] = 1
 

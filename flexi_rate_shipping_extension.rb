@@ -15,7 +15,7 @@ class FlexiRateShippingExtension < Spree::Extension
  
   def activate
     ShippingCategory.class_eval do
-      has_one :flexi_shipping_rate
+      has_many :flexi_shipping_rates
     end
     
     Product.class_eval do
