@@ -3,6 +3,7 @@
   <thead>
     <tr>
 	    <th><%=t("Shipping Category")%></th>
+      <th><%=t("Zone")%></th>
       <th><%=t("First Item Price")%></th>
       <th><%=t("Additional Item Price")%></th>
       <th><%=t("Max. Number of Items")%></th>
@@ -13,6 +14,7 @@
     <% @flexi_shipping_rates.each do |flexi_shipping_rate| %>
       <tr class="<%= cycle('even', 'odd') %>">
         <td><%=flexi_shipping_rate.shipping_category.name %></td>
+        <td><%=flexi_shipping_rate.zone.name %></td>
         <td><%=number_to_currency(flexi_shipping_rate.first_item_price) %></td>
         <td><%=number_to_currency(flexi_shipping_rate.additional_item_price) %></td>
         <td><%=flexi_shipping_rate.max_items %></td>

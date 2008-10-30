@@ -1,0 +1,8 @@
+flexi_us:
+  name: Flexi Rate (US)
+  zone: available_shipping
+  shipping_calculator: Spree::FlexiRateShipping::Calculator
+flexi_eu:
+  name: Flexi Rate (EU)
+  zone_id: 1
+  shipping_calculator: Spree::FlexiRateShipping::Calculator

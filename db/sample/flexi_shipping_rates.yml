@@ -1,0 +1,34 @@
+default_flexi_eu:
+  shipping_category: default_shipping
+  zone_id: 1
+  first_item_price: 10.00
+  additional_item_price: 2.00
+  max_items: 5
+small_flexi_eu:
+  shipping_category: small_item_shipping
+  zone_id: 1
+  first_item_price: 2.00
+  additional_item_price: 0.50
+  max_items: 10
+large_flexi_eu:
+  shipping_category: large_item_shipping
+  zone_id: 1
+  first_item_price: 25.00
+  max_items: 1
+default_flexi_us:
+  shipping_category: default_shipping
+  zone: available_shipping
+  first_item_price: 40.00
+  additional_item_price: 10.00
+  max_items: 5
+small_flexi_us:
+  shipping_category: small_item_shipping
+  zone: available_shipping
+  first_item_price: 6.00
+  additional_item_price: 1.50
+  max_items: 10
+large_flexi_us:
+  shipping_category: large_item_shipping
+  zone: available_shipping
+  first_item_price: 75.00
+  max_items: 1
