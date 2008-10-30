@@ -2,7 +2,7 @@ Summary
 ======= 
 Flexi Rate Shipping is an extension to Spree (a complete open source commerce solution for Ruby on Rails) that uses predefined values to calculate shipping. This extension is designed to be used when a traditional UPS / FedEx API approach in unavailable or unsuitable. 
 
-When installed, a new "Flexi Shipping Rates" link is added to the Configuration area in the Spree administration interface. Here you can define as many different rates as required, and link them to the relevant Shipping Category and Zone.  
+When installed, a new "Flexi Shipping Rates" link is added to the Configuration area in the Spree administration interface. Here you can define as many different rates as required, and link them to the relevant Shipping Categories and Zones.  
 
 Each FlexiShippingRate contains the following values:
 
@@ -14,7 +14,7 @@ Each FlexiShippingRate contains the following values:
 
 4. **Additional Item Price:** Is the amount added to the shipping total for each additional item (after the first item) in the order.
 
-5. **Max. Items:** Is the maximum number of items that can be grouped in a single FlexiShippingRate, the first item that exceeds this value will be charged the the _First Item Price_ and the each subsequent item will be charged at the _Additional Item Price_ until the value is reached again, and cycle restarts.
+5. **Max. Items:** Is the maximum number of items that can be grouped in a single FlexiShippingRate, the first item that exceeds this value will be charged the _First Item Price_ and the each subsequent item will be charged at the _Additional Item Price_ until the value is reached again, and cycle restarts.
 
 
 Exmaples
@@ -72,3 +72,12 @@ The total shipping amount would be:
 
 Quick Start
 ===========
+1. Install extension:
+
+    `script/extension install git://github.com/BDQ/spree-flexi-rate-shipping.git `
+
+2. Migrate the database (or bootstrap if you want the sample data for testing)
+
+    `rake db:migrate`
+
+3. Log in to the Admin interface and associate Products with Shipping Categories.
