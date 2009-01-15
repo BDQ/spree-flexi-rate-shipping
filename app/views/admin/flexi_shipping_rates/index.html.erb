@@ -1,13 +1,13 @@
-<h1><%=t("Flexi Shipping Rates") %></h1>
+<h1><%= FlexiShippingRate.human_name(:count => 2) %></h1>
 <table class="admin-report" width="545">
   <thead>
     <tr>
-	    <th><%=t("Shipping Category")%></th>
-      <th><%=t("Zone")%></th>
-      <th><%=t("First Item Price")%></th>
-      <th><%=t("Additional Item Price")%></th>
-      <th><%=t("Max. Number of Items")%></th>
-			<th><%=t("Action")%></th>
+	    <th><%= FlexiShippingRate.human_attribute_name("shipping_category") %></th>
+      <th><%= FlexiShippingRate.human_attribute_name("zone")%></th>
+      <th><%= FlexiShippingRate.human_attribute_name("first_item_price")%></th>
+      <th><%= FlexiShippingRate.human_attribute_name("additional_item_price")%></th>
+      <th><%= FlexiShippingRate.human_attribute_name("max_number_of_items")%></th>
+			<th><%= t("action")%></th>
     </tr>
   </thead>
   <tbody>
@@ -19,8 +19,8 @@
         <td><%=number_to_currency(flexi_shipping_rate.additional_item_price) %></td>
         <td><%=flexi_shipping_rate.max_items %></td>
         <td>
-          <%=link_to t("Edit"), edit_object_url(flexi_shipping_rate) %> |
-          <%=link_to t("Delete"), object_url(flexi_shipping_rate), :method => :delete %>
+          <%=link_to t("edit"), edit_object_url(flexi_shipping_rate) %> |
+          <%=link_to t("delete"), object_url(flexi_shipping_rate), :method => :delete %>
         </td>
       </tr>
     <% end %>
@@ -29,4 +29,4 @@
     <% end %>
   </tbody>
 </table>
-<%= link_to t("New Flexi Shipping Rate"), new_object_url %>
+<%= link_to "#{t("actions.new")} #{FlexiShippingRate.human_name}", new_object_url %>

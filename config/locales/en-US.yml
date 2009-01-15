@@ -1,0 +1,16 @@
+en-US:
+  activerecord: 
+    attributes: 
+      flexi_shipping_rate: 
+        first_item_price: "First item price"
+        additional_item_price: "Additional item price"
+        max_items: "Max. number of items"
+    models: 
+      flexi_shipping_rate: 
+        one: "Flexi Shipping Rate"
+        other: "Flexi Shipping Rates"    
+    errors:
+      models:
+        flexi_shipping_rate:
+          taken: "already exists for the specified Zone."
+  flexi_shipping_rates_description: Manage rates and associated Shipping Categories for use with the FlexiRate Shipping Extension
