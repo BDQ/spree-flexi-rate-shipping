@@ -1,5 +1,7 @@
 Flexi Rate Shipping
 ===================
+**Now Supports Spree: 0.7.1**
+
 Flexi Rate Shipping is an extension to Spree (a complete open source commerce solution for Ruby on Rails) that uses predefined values to calculate shipping. This extension is designed to be used when a traditional UPS / FedEx API approach in unavailable or unsuitable. 
 
 When installed, a new "Flexi Shipping Rates" link is added to the Configuration area in the Spree administration interface. Here you can define as many different rates as required, and link them to the relevant Shipping Categories and Zones.  

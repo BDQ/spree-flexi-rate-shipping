@@ -2,9 +2,9 @@
 # require_dependency 'application'
 
 class FlexiRateShippingExtension < Spree::Extension
-  version "1.0"
-  description "Describe your extension here"
-  url "http://yourwebsite.com/flexi_rate_shipping"
+  version "0.7.1"
+  description "Calculates shipping using predefined rates."
+  url "http://github.com/BDQ/spree-flexi-rate-shipping/tree/master"
  
   define_routes do |map|
     map.namespace :admin do |admin|

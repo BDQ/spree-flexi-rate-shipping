@@ -1,5 +1,15 @@
+<div class='toolbar'>
+  <ul class='actions'>
+    <li>
+      <%= button_link_to t("new_flexi_shipping_rate"), new_object_url, :icon => 'add'  %>
+    </li>
+  </ul>
+  <br class='clear' />
+</div>
+
 <h1><%= FlexiShippingRate.human_name(:count => 2) %></h1>
-<table class="admin-report" width="545">
+
+<table class="index">
   <thead>
     <tr>
 	    <th><%= FlexiShippingRate.human_attribute_name("shipping_category") %></th>
@@ -12,15 +22,15 @@
   </thead>
   <tbody>
     <% @flexi_shipping_rates.each do |flexi_shipping_rate| %>
-      <tr class="<%= cycle('even', 'odd') %>">
+      <tr>
         <td><%=flexi_shipping_rate.shipping_category.name %></td>
         <td><%=flexi_shipping_rate.zone.name %></td>
         <td><%=number_to_currency(flexi_shipping_rate.first_item_price) %></td>
         <td><%=number_to_currency(flexi_shipping_rate.additional_item_price) %></td>
         <td><%=flexi_shipping_rate.max_items %></td>
         <td>
-          <%=link_to t("edit"), edit_object_url(flexi_shipping_rate) %> |
-          <%=link_to t("delete"), object_url(flexi_shipping_rate), :method => :delete %>
+          <%= link_to_edit flexi_shipping_rate %> &nbsp;
+          <%= link_to_delete flexi_shipping_rate %>
         </td>
       </tr>
     <% end %>
@@ -29,4 +39,3 @@
     <% end %>
   </tbody>
 </table>
-<%= link_to "#{t("actions.new")} #{FlexiShippingRate.human_name}", new_object_url %>

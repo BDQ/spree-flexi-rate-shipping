@@ -1,17 +1,17 @@
 module Spree
   module FlexiRateShipping
     class Calculator
-      def calculate_shipping(order)
+      def calculate_shipping(shipment)
         rates = {}
         rate_count = {}
-        order.line_items.each do |li|
+        shipment.order.line_items.each do |li|
 
           li.quantity.times do 
             sc = li.variant.product.shipping_category
             sc ||= ShippingCategory.new()
             flexi_rates = sc.flexi_shipping_rates
             
-            fsr = flexi_rates.detect{ | rate | rate.zone.include?(order.address) }
+            fsr = flexi_rates.detect{ | rate | rate.zone.include?(shipment.address) }
             
             fsr ||= FlexiShippingRate.new(:id => 'default', :first_item_price => 0, :max_items => 1)
             rate_count.has_key?(fsr.id) ? rate_count[fsr.id] += 1 : rate_count[fsr.id] = 1

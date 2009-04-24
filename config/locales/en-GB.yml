@@ -14,3 +14,5 @@ en-GB:
         flexi_shipping_rate:
           taken: "already exists for the specified Zone."
   flexi_shipping_rates_description: Manage rates and associated Shipping Categories for use with the FlexiRate Shipping Extension
+  new_flexi_shipping_rate: "New Flexi Shipping Rate"
+  editing: "Editing"

@@ -1,4 +1,4 @@
-<h1><%= "#{t("edit")} #{FlexiShippingRate.human_name}" %></h1>
+<h1><%= "#{t("editing")} #{FlexiShippingRate.human_name}" %></h1>
 <%= error_messages_for :flexi_shipping_rate %>
 <% form_for(:flexi_shipping_rate, :url => object_url, :html => { :method => :put }) do |f| %>
   <%= render :partial => "form", :locals => { :f => f } %>
